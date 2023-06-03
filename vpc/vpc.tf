@@ -8,7 +8,7 @@ resource "aws_internet_gateway" "igw" {
 
 resource "aws_subnet" "pub_sub1" {
 cidr_block = "10.3.1.0/24"
-availability_zone = "ap-south-1a"
+availability_zone = "ap-northeast-1a"
 map_public_ip_on_launch = "true"
 vpc_id = aws_vpc.vpc.id
  tags = {
@@ -18,7 +18,7 @@ vpc_id = aws_vpc.vpc.id
 
 resource "aws_subnet" "pub_sub2" {
 cidr_block = "10.3.2.0/24"
-availability_zone = "ap-south-1c"
+availability_zone = "ap-northeast-1b"
 vpc_id = aws_vpc.vpc.id
 map_public_ip_on_launch = "true"
 tags = {
