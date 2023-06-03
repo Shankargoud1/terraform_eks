@@ -1,13 +1,13 @@
 resource "aws_vpc" "vpc" {
-  cidr_block = "10.3.0.0/16"
+  cidr_block = "12.0.0.0/16"
 }
 
 resource "aws_internet_gateway" "igw" {
     vpc_id = aws_vpc.vpc.id
 }
 
-resource "aws_subnet" "pub_sub1" {
-cidr_block = "10.3.1.0/24"
+resource "aws_subnet" "public-subnet1" {
+cidr_block = "12.0.0.0/24"
 availability_zone = "ap-northeast-1a"
 map_public_ip_on_launch = "true"
 vpc_id = aws_vpc.vpc.id
@@ -16,8 +16,8 @@ vpc_id = aws_vpc.vpc.id
   }
 }
 
-resource "aws_subnet" "pub_sub2" {
-cidr_block = "10.3.2.0/24"
+resource "aws_subnet" "public-subnet2" {
+cidr_block = "12.0.1.0/24"
 availability_zone = "ap-northeast-1b"
 vpc_id = aws_vpc.vpc.id
 map_public_ip_on_launch = "true"
